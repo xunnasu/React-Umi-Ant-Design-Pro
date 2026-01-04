@@ -46,7 +46,7 @@ export default [
     ],
   },
   {
-    name: 'list.table-list',
+    name: '数据集',
     icon: 'table',
     path: '/list',
     component: './table-list',

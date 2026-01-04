@@ -92,3 +92,37 @@ export async function removeRule(options?: { [key: string]: any }) {
     },
   });
 }
+
+/** 获取数据集列表 GET /api/datasets */
+export async function getDatasets(options?: { [key: string]: any }) {
+  return request<{
+    errno: number;
+    errmsg: string;
+    data: {
+      list: Array<{
+        dataset_id: string;
+        dataset_name: string;
+        dataset_version: string;
+        description: string;
+        robot_model: string;
+        robot_morphology: string;
+        gripper: string;
+        rgb_cams: number;
+        depth_cams: number;
+        wrist_cams: number;
+        calibration_data: any;
+        coordinate_system: string;
+        total_episodes: number;
+        file_size: number;
+        license: string;
+        file_path: string;
+        created_at: string;
+        updated_at: string;
+      }>;
+      total: number;
+    };
+  }>('/api/datasets', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}

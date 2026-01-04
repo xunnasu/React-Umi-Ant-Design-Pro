@@ -132,8 +132,20 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (values: API.LoginParams) => {
     try {
-      // 登录
-      const msg = await login({ ...values, type });
+      // 临时修改登录20260103
+      // const msg = await login({ ...values, type });
+      let msg 
+      if( values.username  === 'admin' && values.password === '123456' ){
+        msg = {
+          status: 'ok',
+          type: 'account',
+          currentAuthority: 'admin',
+        }
+      } else {
+        msg = {
+          status: 'error',
+        }
+      }
       if (msg.status === 'ok') {
         const defaultLoginSuccessMessage = intl.formatMessage({
           id: 'pages.login.success',
