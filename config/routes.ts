@@ -25,7 +25,7 @@ export default [
   {
     path: '/welcome',
     name: 'welcome',
-    icon: 'smile',
+    icon: 'home',
     component: './Welcome',
   },
   {
@@ -47,10 +47,48 @@ export default [
   },
   {
     name: '数据集',
-    icon: 'table',
+    icon: 'database',
     path: '/list',
-    component: './table-list',
+    routes: [
+      {
+        path: '/list',
+        redirect: '/list/open',
+      },
+      {
+        path: '/list/open',
+        name: '开放数据集',
+        component: './table-list',
+      },
+      {
+        path: '/list/driod',
+        name: '机器人',
+        component: './table-list/Driod',
+      },
+    ],
   },
+  // {
+  //   name: '前景资料库',
+  //   icon: 'inbox',
+  //   path: '/ProspectDatabase',
+  //   routes: [
+  //     {
+  //       path: '/ProspectDatabase',
+  //       name: '自研',
+  //       component: './ProspectDatabase',
+  //     },
+  //     // {
+  //     //   path: '/list',
+  //     //   name: 'ArtVIP',
+  //     //   component: './table-list',
+  //     // },
+  //     // {
+  //     //   path: '/list',
+  //     //   name: 'Robocasa',
+  //     //   component: './table-list',
+  //     // },
+  //   ],
+  // },
+
   {
     path: '/',
     redirect: '/welcome',

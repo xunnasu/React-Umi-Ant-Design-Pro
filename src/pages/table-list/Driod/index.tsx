@@ -331,6 +331,8 @@ const TableList: React.FC = () => {
         scroll={{ x: 1500 }} //左侧固定需要配合scroll使用 'max-content'
         request={mockRequest}
         columns={columns}
+       
+       
         // rowSelection={{
         //   onChange: (_, selectedRows) => {
         //     setSelectedRows(selectedRows);

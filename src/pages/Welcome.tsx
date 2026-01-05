@@ -2,6 +2,7 @@ import { PageContainer } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
 import { Card, theme } from 'antd';
 import React from 'react';
+import bg from '../../public/images/bg2.png'
 
 /**
  * 每个单独的卡片，为了复用样式抽成了组件
@@ -91,6 +92,7 @@ const Welcome: React.FC = () => {
       <Card
         style={{
           borderRadius: 8,
+          minHeight: '250px',
         }}
         styles={{
           body: {
@@ -103,24 +105,29 @@ const Welcome: React.FC = () => {
       >
         <div
           style={{
-            backgroundPosition: '100% -30%',
+            backgroundPosition: 'right',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: '274px auto',
+            backgroundSize: 'contain',
             backgroundImage:
-              "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
+              // "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
+              `url(${bg})`,
+               height: '100%', // 容器高度撑满
+               minHeight: '550px', // 设置最小高度
+               paddingRight: '300px', // 为图片预留空间
+               boxSizing: 'border-box',
           }}
         >
           <div
             style={{
-              fontSize: '20px',
+              fontSize: '25px',
               color: token.colorTextHeading,
             }}
           >
-            欢迎使用数据平台
+            <strong>数据平台</strong>
           </div>
           <p
             style={{
-              fontSize: '14px',
+              fontSize: '16px',
               color: token.colorTextSecondary,
               lineHeight: '22px',
               marginTop: 16,
@@ -128,8 +135,9 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            数据平台 是一个整合了 umi，Ant Design 和 ProComponents
-            的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
+            <strong>欢迎来到智能机器人数据平台！</strong><br></br>
+            <br></br>
+           这是一款专为机器人研发打造的专业数据平台，核心是整合优质开源机器人数据集、提供便捷的数据管理与调用服务，能够更高效地开展算法训练、任务验证与场景复现工作，大幅加速机器人具身智能技术的研发进程，为机器人操作学习、算法训练与验证提供高质量的数据支撑。
           </p>
         </div>
       </Card>
